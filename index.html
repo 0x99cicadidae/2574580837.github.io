@@ -445,6 +445,177 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://micromaker.github.io/2019/01/09/网络流-Network-Flows/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="MicroMaker">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="MicroMaker's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/01/09/网络流-Network-Flows/" class="post-title-link" itemprop="http://micromaker.github.io/index.html">网络流 Network-Flows</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-01-09 22:31:14 / 修改时间：22:34:19" itemprop="dateCreated datePublished" datetime="2019-01-09T22:31:14+08:00">2019-01-09</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/01/09/网络流-Network-Flows/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2019/01/09/网络流-Network-Flows/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2019/01/09/网络流-Network-Flows/" class="leancloud_visitors" data-flag-title="网络流 Network-Flows">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数：</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>今天做数学试卷做到了一道题，很像网络流的最大流，于是就把EK学了qwq<br><img src="/images/2019-01-09 222404.jpg" alt=""></p>
+<p>先发个代码吧：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;queue&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> INF=<span class="number">0x7fffffff</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MaxN=<span class="number">1001</span>;</span><br><span class="line"><span class="keyword">int</span> G[MaxN][MaxN];</span><br><span class="line"><span class="keyword">int</span> n,m,en;</span><br><span class="line"><span class="keyword">int</span> s,t;</span><br><span class="line"><span class="keyword">int</span> pre[MaxN],flw[MaxN];</span><br><span class="line"><span class="keyword">int</span> hd[MaxN];</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">bfs</span><span class="params">(<span class="keyword">int</span> s,<span class="keyword">int</span> t)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">queue</span>&lt;<span class="keyword">int</span>&gt; Q;</span><br><span class="line">    <span class="built_in">memset</span>(pre,<span class="number">-1</span>,<span class="keyword">sizeof</span> pre);</span><br><span class="line">    pre[s]=<span class="number">0</span>;</span><br><span class="line">    Q.push(s);</span><br><span class="line">    flw[s]=INF;</span><br><span class="line">    <span class="keyword">while</span>(!Q.empty())</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">int</span> now=Q.front();</span><br><span class="line">        Q.pop();</span><br><span class="line">        <span class="keyword">if</span>(now==t)</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;++i)</span><br><span class="line">            <span class="keyword">if</span>(G[now][i]&gt;<span class="number">0</span>&amp;&amp;pre[i]==<span class="number">-1</span>)</span><br><span class="line">                pre[i]=now,flw[i]=min(flw[now],G[now][i]),Q.push(i);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> pre[t]==<span class="number">-1</span>?<span class="number">-1</span>:flw[t];</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">EK</span><span class="params">(<span class="keyword">int</span> s,<span class="keyword">int</span> t)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> sum=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> maxflw=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span>((sum=bfs(s,t))!=<span class="number">-1</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">int</span> k=t;</span><br><span class="line">        <span class="keyword">while</span>(k!=s)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">int</span> lst=pre[k];</span><br><span class="line">            G[lst][k]-=sum;</span><br><span class="line">            G[k][lst]+=sum;</span><br><span class="line">            k=lst;</span><br><span class="line">        &#125;</span><br><span class="line">        maxflw+=sum;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> maxflw;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> u,v,w;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d %d %d %d"</span>,&amp;n,&amp;m,&amp;s,&amp;t);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=m;++i)</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%d %d %d"</span>,&amp;u,&amp;v,&amp;w),G[u][v]+=w;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">printf</span>(<span class="string">"%d"</span>,EK(s,t)),<span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>洛谷题号：<a href="https://www.luogu.org/problemnew/solution/P3376" target="_blank" rel="noopener">P3376</a></p>
+<p>EK最好用邻接矩阵，70pts</p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    <div>
+      
+    </div>
+
+    
+
+    
+       
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://micromaker.github.io/2019/01/06/My-Genuine-Game-Life/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -2510,189 +2681,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://micromaker.github.io/2018/10/21/无人机购买/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="MicroMaker">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="MicroMaker's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2018/10/21/无人机购买/" class="post-title-link" itemprop="http://micromaker.github.io/index.html">无人机购买表(UAV purchase list)</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2018-10-21 21:21:21" itemprop="dateCreated datePublished" datetime="2018-10-21T21:21:21+08:00">2018-10-21</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2018-12-26 21:12:05" itemprop="dateModified" datetime="2018-12-26T21:12:05+08:00">2018-12-26</time>
-              
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/10/21/无人机购买/#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2018/10/21/无人机购买/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/2018/10/21/无人机购买/" class="leancloud_visitors" data-flag-title="无人机购买表(UAV purchase list)">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数：</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>单价420.00￥</p>
-<p>姓名&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;操作模式&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;实际价格&ensp;&ensp;&ensp;&ensp;&ensp;付款情况</p>
-<p>梁书溢&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;默认&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;370.00RMB&ensp;&ensp;&ensp;现金</p>
-<p>叶纳诚&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;美国手(油门左手)&ensp;&ensp;&ensp;&ensp;370.00RMB&ensp;&ensp;&ensp;微信支付</p>
-<p>杨加煜&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;美国手(油门左手)&ensp;&ensp;&ensp;&ensp;370.00RMB&ensp;&ensp;&ensp;现金</p>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    <div>
-      
-    </div>
-
-    
-
-    
-       
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2740,7 +2728,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">14</span>
+                    <span class="site-state-item-count">15</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -2926,7 +2914,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共4k字</span>
+  <span class="post-count">博客全站共4.3k字</span>
 <span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span> <script>
     var now = new Date(); 
     function createtime() { 
@@ -3118,9 +3106,9 @@ setInterval("createtime()",250);
       
     
       
-        
-      
     
+      
+        
       
     
       
