@@ -451,6 +451,240 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://micromaker.github.io/2019/07/10/cfcontestanswer20190710/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="MicroMaker">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://s2.ax1x.com/2019/07/09/ZyazLV.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="MicroMaker's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/07/10/cfcontestanswer20190710/" class="post-title-link" itemprop="http://micromaker.github.io/index.html">20190710双人开黑CF模拟赛</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-07-10 22:33:57 / 修改时间：23:08:40" itemprop="dateCreated datePublished" datetime="2019-07-10T22:33:57+08:00">2019-07-10</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/07/10/cfcontestanswer20190710/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2019/07/10/cfcontestanswer20190710/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2019/07/10/cfcontestanswer20190710/" class="leancloud_visitors" data-flag-title="20190710双人开黑CF模拟赛">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数：</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><a href="http://codeforces.com/contest/1186" target="_blank" rel="noopener">Codeforces Round #571 (Div. 2)</a></p>
+<p><img src="https://s2.ax1x.com/2019/07/10/Zgaq3Q.png" alt=""></p>
+<p><img src="https://s2.ax1x.com/2019/07/10/Zgab9g.png" alt=""></p>
+<p>日常被tanao_大佬带飞，我AC了A和C（B题没了。。。否则tanao_大佬肯定把我吊打）</p>
+<p><a href="http://codeforces.com/contest/1186/problem/A" target="_blank" rel="noopener">A. Vus the Cossack and a Contest</a></p>
+<p>Vus the <a href="https://en.wikipedia.org/wiki/Cossacks" target="_blank" rel="noopener">Cossack</a> holds a programming competition, in which $n$ people participate. He decided to award them all with pens and notebooks. It is known that Vus has exactly $m$ pens and $k$ notebooks.</p>
+<p>Determine whether the Cossack can reward <strong>all</strong> participants, giving each of them at least one pen and at least one notebook.</p>
+<p>Input</p>
+<p>The first line contains three integers $n$, $m$, and $k$ (1≤n,m,k≤100) — the number of participants, the number of pens, and the number of notebooks respectively.</p>
+<p>Output</p>
+<p>Print “Yes” if it possible to reward all the participants. Otherwise, print “No”.</p>
+<p>You can print each letter in any case (upper or lower).</p>
+<p>Div.2的A标准打卡题难度，翻译：</p>
+<p>给你整数n、m、k，判断m和k是否都大于等于n</p>
+<p>这好像都比noip2018pj的t1都要简单。。。</p>
+<p>直接if完事</p>
+<p>Code:</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cctype&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> reg register</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">template</span> &lt;<span class="class"><span class="keyword">class</span> <span class="title">t</span>&gt; <span class="title">inline</span> <span class="title">void</span> <span class="title">rd</span>(<span class="title">t</span> &amp;<span class="title">s</span>)</span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">	s=<span class="number">0</span>;</span><br><span class="line">	reg <span class="keyword">char</span> c=getchar();</span><br><span class="line">	<span class="keyword">while</span>(!<span class="built_in">isdigit</span>(c))</span><br><span class="line">		c=getchar();</span><br><span class="line">	<span class="keyword">while</span>(<span class="built_in">isdigit</span>(c))</span><br><span class="line">		s=(s&lt;&lt;<span class="number">3</span>)+(s&lt;&lt;<span class="number">1</span>)+(c^<span class="number">48</span>),c=getchar();</span><br><span class="line">	<span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">signed</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> n,m,k;</span><br><span class="line">	rd(n);rd(m);rd(k);</span><br><span class="line">	<span class="keyword">if</span>(m&gt;=n&amp;&amp;k&gt;=n)</span><br><span class="line">		<span class="built_in">puts</span>(<span class="string">"Yes"</span>);</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">		<span class="built_in">puts</span>(<span class="string">"No"</span>);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><a href="http://codeforces.com/contest/1186/problem/C" target="_blank" rel="noopener">C. Vus the Cossack and Strings</a></p>
+<p>Vus the Cossack has two binary strings, that is, strings that consist only of “0” and “1”. We call these strings a and b. It is known that |b|≤|a|, that is, the length of b is at most the length of a.</p>
+<p>The Cossack considers every substring of length |b| in string a. Let’s call this substring c. He matches the corresponding characters in b and c, after which he counts the number of positions where the two strings are different. We call this function f(b,c).</p>
+<p>For example, let b=00110, and c=11000. In these strings, the first, second, third and fourth positions are different.</p>
+<p>Vus the Cossack counts the number of such substrings c such that f(b,c) is <strong>even</strong>.</p>
+<p>For example, let a=01100010 and b=00110. aa has four substrings of the length |b|: 01100, 11000, 10001, 00010.</p>
+<ul>
+<li>f(00110,01100)=2;</li>
+<li>f(00110,11000)=4;</li>
+<li>f(00110,10001)=4;</li>
+<li>f(00110,00010)=1.</li>
+</ul>
+<p>Since in three substrings, f(b,c)f(b,c) is even, the answer is 33.</p>
+<p>Vus can not find the answer for big strings. That is why he is asking you to help him.</p>
+<p>Input</p>
+<p>The first line contains a binary string a $(1≤|a|≤10^6)$ — the first string.</p>
+<p>The second line contains a binary string b $(1≤|b|≤|a|)$ — the second string.</p>
+<p>Output</p>
+<p>Print one number — the answer.</p>
+<p>input1</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">01100010</span><br><span class="line">00110</span><br></pre></td></tr></table></figure>
+<p>output1</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">3</span><br></pre></td></tr></table></figure>
+<p>input2</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">1010111110</span><br><span class="line">0110</span><br></pre></td></tr></table></figure>
+<p>output2</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">4</span><br></pre></td></tr></table></figure>
+<p>人话：</p>
+<p>给你两个个二进制串a和b，b的长度小于等于a，将a的每个长度位b长度的连续子序列拿出来和a进行f操作，f操作就是比对两个串有几位不同，如果这个数是偶数，那么答案加一</p>
+<p>样例1的解释在题面里有了</p>
+<p>那么直接开始分析吧：</p>
+<p>这个f操作以看就知道是异或然后统计1的个数，但是直接做或者bitset都会超时，那么</p>
+<p>这题看到偶数就应该想到奇偶性，那么奇偶性与和以及异或和是有关的，于是。。。</p>
+<p>把a串的前缀和求出来，再把b串的异或和求出来</p>
+<p>然后看看，我们只要得知f结果的奇偶性就好了，并不要得知他是多少</p>
+<p>所以，a的前缀和可以帮我们知道a的一段区间内和的奇偶性，我们也可以得知这段区间内1的出现次数的奇偶性</p>
+<p>那么，b的异或和可以帮助我们知道b串中1的出现次数的奇偶性</p>
+<p>那么，如果这两个奇偶性相同时，那么我们就得知他们异或后的结果内1的个数是偶数个</p>
+<p>$e.g.$:我们定义g函数为区间内1出现次数的奇偶性（1奇，0偶）</p>
+<p>$g(10101)=1$, $g(10010)=0$, 所以它们异或后的结果1的个数一定为奇数个</p>
+<p>检验：$10101 xor 10010 = 00111$</p>
+<p>那么代码就有了，Code:</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cctype&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bitset&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> reg register</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MaxN=<span class="number">1000001</span>;</span><br><span class="line"><span class="keyword">template</span> &lt;<span class="class"><span class="keyword">class</span> <span class="title">t</span>&gt; <span class="title">inline</span> <span class="title">void</span> <span class="title">rd</span>(<span class="title">t</span> &amp;<span class="title">s</span>)</span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">	s=<span class="number">0</span>;</span><br><span class="line">	reg <span class="keyword">char</span> c=getchar();</span><br><span class="line">	<span class="keyword">while</span>(!<span class="built_in">isdigit</span>(c))</span><br><span class="line">		c=getchar();</span><br><span class="line">	<span class="keyword">while</span>(<span class="built_in">isdigit</span>(c))</span><br><span class="line">		s=(s&lt;&lt;<span class="number">3</span>)+(s&lt;&lt;<span class="number">1</span>)+(c^<span class="number">48</span>),c=getchar();</span><br><span class="line">	<span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">char</span> ia[MaxN],ib[MaxN];</span><br><span class="line"><span class="keyword">int</span> a[MaxN],b[MaxN],f[MaxN],g[MaxN];</span><br><span class="line"><span class="keyword">int</span> lena,lenb;</span><br><span class="line"><span class="function"><span class="keyword">signed</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%s%s"</span>,ia+<span class="number">1</span>,ib+<span class="number">1</span>);</span><br><span class="line">	lena=<span class="built_in">strlen</span>(ia+<span class="number">1</span>),lenb=<span class="built_in">strlen</span>(ib+<span class="number">1</span>);</span><br><span class="line"><span class="comment">//	printf("%d %d",lena,lenb);</span></span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=lena;++i)</span><br><span class="line">	&#123;</span><br><span class="line">		a[i]=(ia[i]==<span class="string">'1'</span>)?<span class="number">1</span>:<span class="number">0</span>;</span><br><span class="line">		f[i]=f[i<span class="number">-1</span>]+a[i];</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=lenb;++i)</span><br><span class="line">	&#123;</span><br><span class="line">		b[i]=(ib[i]==<span class="string">'1'</span>)?<span class="number">1</span>:<span class="number">0</span>;</span><br><span class="line">		g[i]=g[i<span class="number">-1</span>]^b[i];</span><br><span class="line">	&#125;</span><br><span class="line">	reg <span class="keyword">int</span> ans=<span class="number">0</span>,k,u;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=lenb;i&lt;=lena;++i)</span><br><span class="line">	&#123;</span><br><span class="line">		u=i-lenb+<span class="number">1</span>;</span><br><span class="line">		k=(f[i]-f[u<span class="number">-1</span>])&amp;<span class="number">1</span>;</span><br><span class="line">		k=!k;</span><br><span class="line">		ans+=k^g[lenb]; </span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%d"</span>,ans);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><a href="http://codeforces.com/contest/1186/problem/D" target="_blank" rel="noopener">D. Vus the Cossack and Numbers</a></p>
+<p>关于D题，其实是我先开题的，结果我觉得C题可做，巨佬tanao_觉得D题可做，就换题了，我打了一份D的代码，结果马上被我叉了。。。这里不贴出来了，这里贴一下<strong>tanao_巨佬的代码</strong>：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">long</span> <span class="keyword">long</span> <span class="title">read</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">long</span> <span class="keyword">long</span> x=<span class="number">0</span>,f=<span class="number">1</span>;</span><br><span class="line">	<span class="keyword">char</span> ch=getchar();</span><br><span class="line">	<span class="keyword">while</span>(ch&lt;<span class="string">'0'</span>||ch&gt;<span class="string">'9'</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span>(ch==<span class="string">'-'</span>)</span><br><span class="line">			f=<span class="number">-1</span>;</span><br><span class="line">		ch=getchar();</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">while</span>(ch&gt;=<span class="string">'0'</span>&amp;&amp;ch&lt;=<span class="string">'9'</span>)</span><br><span class="line">		x=x*<span class="number">10</span>+ch-<span class="string">'0'</span>,ch=getchar();</span><br><span class="line">	<span class="keyword">while</span>(ch&lt;<span class="string">'0'</span>||ch&gt;<span class="string">'9'</span>)</span><br><span class="line">		ch=getchar();</span><br><span class="line">	<span class="keyword">while</span>(ch&gt;=<span class="string">'0'</span>&amp;&amp;ch&lt;=<span class="string">'9'</span>)</span><br><span class="line">		x=x*<span class="number">10</span>+ch-<span class="string">'0'</span>,ch=getchar();</span><br><span class="line">	<span class="keyword">return</span> x*f;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">long</span> <span class="keyword">long</span> <span class="title">c</span><span class="params">(<span class="keyword">long</span> <span class="keyword">long</span> x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(x%<span class="number">100000</span>==<span class="number">0</span>)</span><br><span class="line">		<span class="keyword">return</span> x;</span><br><span class="line">	<span class="keyword">if</span>(x&lt;<span class="number">0</span>)</span><br><span class="line">		<span class="keyword">return</span> x-x%<span class="number">100000</span><span class="number">-100000</span>;</span><br><span class="line">	<span class="keyword">return</span> x-x%<span class="number">100000</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> n;</span><br><span class="line">	<span class="built_in">cin</span>&gt;&gt;n;</span><br><span class="line">	<span class="keyword">long</span> <span class="keyword">long</span> sum=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;++i)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">long</span> <span class="keyword">long</span> x=read();</span><br><span class="line">		<span class="keyword">if</span>(c(sum)+c(x)==c(sum+x))</span><br><span class="line">			<span class="built_in">cout</span>&lt;&lt;c(x)/<span class="number">100000</span>&lt;&lt;<span class="string">" "</span>;</span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">			<span class="built_in">cout</span>&lt;&lt;c(x)/<span class="number">100000</span>+<span class="number">1</span>&lt;&lt;<span class="string">" "</span>;</span><br><span class="line">		sum+=x;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>我大概看了一下巨佬的代码，首先把浮点数乘以100000防止卡精度，然后？？？？？，我写了主体70多行就被巨佬20多行解决了？</p>
+<p>不过思路差不多，开一个sum用来记录过去剩下的东西，如果和现在的加起来刚好能控制在0.5内，那么就直接取整，否则加1是吧。。。</p>
+<p><strong>各位大佬还是看代码理解一下…</strong></p>
+<p>果然还是我太菜了awa</p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    <div>
+      
+    </div>
+
+    
+
+    
+       
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://micromaker.github.io/2019/07/10/solution-cf366c/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -496,7 +730,7 @@
                 
               
 
-              <time title="创建时间：2019-07-10 16:11:31 / 修改时间：18:14:15" itemprop="dateCreated datePublished" datetime="2019-07-10T16:11:31+08:00">2019-07-10</time>
+              <time title="创建时间：2019-07-10 16:11:31 / 修改时间：22:33:25" itemprop="dateCreated datePublished" datetime="2019-07-10T16:11:31+08:00">2019-07-10</time>
             
 
             
@@ -582,7 +816,13 @@
 <p>得$(a_1-b_1k)+(a_2-b_2k)+…+(a_j-b_jk)=0$，很像0/1分数规划，对不对</p>
 <p>但是<del>这题分类是背包</del></p>
 <p>观察公式，发现这其实是一个容量为0的01背包，</p>
-<p>$a_i-b_ik$</p>
+<p>我们可以把$a_i-b_ik$看作一个物品的体积，$a_i$看作价值，，然后一个标准的01背包模板</p>
+<p>那么，背包的容量？容量为0怎么枚举呢？</p>
+<p>先来想一想，$(a_i-b_ik)$是不是有可能为负数？那么怎么办呢？</p>
+<p>可以考虑开两个背包，容量分别为V和-V，那么加起来就抵消为0，正容量的背包处理正体积的，负容量的背包处理负体积的</p>
+<p>很好，到这一步，套个模板就可以交啦！</p>
+<p>Code:</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cctype&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> int long long</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> reg register</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MaxN=<span class="number">101</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MaxX=<span class="number">10000</span>;</span><br><span class="line"><span class="keyword">template</span> &lt;<span class="class"><span class="keyword">class</span> <span class="title">t</span>&gt; <span class="title">inline</span> <span class="title">void</span> <span class="title">rd</span>(<span class="title">t</span> &amp;<span class="title">s</span>)</span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">	s=<span class="number">0</span>;</span><br><span class="line">	reg <span class="keyword">char</span> c=getchar();</span><br><span class="line">	<span class="keyword">while</span>(!<span class="built_in">isdigit</span>(c))</span><br><span class="line">		c=getchar();</span><br><span class="line">	<span class="keyword">while</span>(<span class="built_in">isdigit</span>(c))</span><br><span class="line">		s=(s&lt;&lt;<span class="number">3</span>)+(s&lt;&lt;<span class="number">1</span>)+(c^<span class="number">48</span>),c=getchar();</span><br><span class="line">	<span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">int</span> w[MaxN],c[MaxN];</span><br><span class="line"><span class="keyword">int</span> f[MaxX+<span class="number">1</span>],g[MaxX+<span class="number">1</span>];</span><br><span class="line"><span class="keyword">int</span> n,k;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">work</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">memset</span>(f,<span class="number">0xc3</span>,<span class="keyword">sizeof</span> f);f[<span class="number">0</span>]=<span class="number">0</span>; </span><br><span class="line">	<span class="built_in">memset</span>(g,<span class="number">0xc3</span>,<span class="keyword">sizeof</span> g);g[<span class="number">0</span>]=<span class="number">0</span>;</span><br><span class="line">	reg <span class="keyword">int</span> W,C;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;++i)</span><br><span class="line">		rd(w[i]);</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;++i)</span><br><span class="line">		rd(c[i]);</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;++i)</span><br><span class="line">	&#123;</span><br><span class="line">		W=w[i],C=c[i];</span><br><span class="line">		w[i]=W-k*C;c[i]=W;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;++i)</span><br><span class="line">	&#123;</span><br><span class="line"><span class="comment">//		printf("wi: %d   ci: %d\n",w[i],c[i]);</span></span><br><span class="line">		<span class="keyword">if</span>(w[i]&gt;=<span class="number">0</span>)</span><br><span class="line">			<span class="keyword">for</span>(<span class="keyword">int</span> j=MaxX;j&gt;=w[i];--j)</span><br><span class="line">				f[j]=max(f[j],f[j-w[i]]+c[i]);</span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">			<span class="keyword">for</span>(<span class="keyword">int</span> j=MaxX;j&gt;=-w[i];--j)</span><br><span class="line">				g[j]=max(g[j],g[j+w[i]]+c[i]);</span><br><span class="line"><span class="comment">//		for(int j=1;j&lt;=n;++j)</span></span><br><span class="line"><span class="comment">//			printf("fi: %d %d   ",f[i],g[i]);puts(""); </span></span><br><span class="line">	&#125;</span><br><span class="line">	reg <span class="keyword">int</span> ans=<span class="number">-1</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;=MaxX;++i)</span><br><span class="line">		ans=max(ans,f[i]+g[i]);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%lld\n"</span>,!ans?<span class="number">-1</span>:ans);</span><br><span class="line">	<span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">signed</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">while</span>(<span class="built_in">cin</span>&gt;&gt;n&gt;&gt;k)</span><br><span class="line">		work();</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
           
         
@@ -2541,210 +2781,11 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://micromaker.github.io/2018/12/12/科创小组日志/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="MicroMaker">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://s2.ax1x.com/2019/07/09/ZyazLV.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="MicroMaker's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2018/12/12/科创小组日志/" class="post-title-link" itemprop="http://micromaker.github.io/index.html">科创小组日志(Science creation group LOG)</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2018-12-12 19:19:46" itemprop="dateCreated datePublished" datetime="2018-12-12T19:19:46+08:00">2018-12-12</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2018-12-26 21:11:51" itemprop="dateModified" datetime="2018-12-26T21:11:51+08:00">2018-12-26</time>
-              
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/12/12/科创小组日志/#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2018/12/12/科创小组日志/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/2018/12/12/科创小组日志/" class="leancloud_visitors" data-flag-title="科创小组日志(Science creation group LOG)">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数：</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>前置芝士：</p>
-<p>名字缩写：YNC叶纳诚，LKQ梁可沁，YJY杨加煜，LSY梁书溢，（LJT吕嘉腾）</p>
-<p><strong>重要事件表示</strong> 普通事件表示 <del>瞎扯淡的记录</del></p>
-<h1 id="2018"><a href="#2018" class="headerlink" title="2018:"></a>2018:</h1><h2 id="09"><a href="#09" class="headerlink" title="09:"></a>09:</h2><p>12：<strong>成立2018级七8班科创小组(11人)</strong></p>
-<p>13：YNC提出群内第一个创意：调温风扇</p>
-<p>20：YJY提出创意：电灯耳勺</p>
-<p>20：LKQ提出创意：以抖腿为能源的椅子</p>
-<p>20：LJT提出创意：打架时不宜受伤防弹衣</p>
-<p>21：LSY提出创意：调温餐盘（原 调温汤勺）</p>
-<p>21：LSY提出创意：球跟随手表</p>
-<p>22：LKQ提出创意：不会发霉的清洁海绵</p>
-<p>24：LSY提出创意：感光眼睛</p>
-<h2 id="10："><a href="#10：" class="headerlink" title="10："></a>10：</h2><p>02：LKQ发表论文：不会发霉的清洁海绵</p>
-<p>18：YJY提出创意：电子扫描分类垃圾桶</p>
-<h2 id="11："><a href="#11：" class="headerlink" title="11："></a>11：</h2><p>16：<strong>科创小组裁员</strong></p>
-<p>16：<strong>成立2018级七8班科创小组R(YNC,YJY,LKQ,LSY,LJT,王凯)(吕晟立)</strong></p>
-<p>22:无人机训练开始(YNC,YJY,LSY)</p>
-<p>24:TEACHER提出创意：校园自动垃圾清理车</p>
-<h2 id="12："><a href="#12：" class="headerlink" title="12："></a>12：</h2><p>09：<strong>科创小组裁员</strong></p>
-<p>09：<strong>成立2018级七8班科创小组Re(YNC,YJY,LKQ,LSY)(吕晟立)</strong></p>
-<p>13（拟订）：3d打印训练开始</p>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    <div>
-      
-    </div>
-
-    
-
-    
-       
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 
@@ -2787,7 +2828,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">20</span>
+                    <span class="site-state-item-count">21</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -2989,7 +3030,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共10.1k字</span>
+  <span class="post-count">博客全站共12k字</span>
 <span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span> <script>
     var now = new Date(); 
     function createtime() { 
