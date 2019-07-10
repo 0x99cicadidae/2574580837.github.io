@@ -1903,7 +1903,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #8b44ff;
+  background: #c1ff6b;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3186,6 +3186,9 @@ ul.breadcrumb li+li:last-child {
   .pagination {
     margin: 8px 0 0;
   }
+}
+body {
+  background: url("https://s2.ax1x.com/2019/07/10/ZczSxK.jpg");
 }
 * {
   cursor: url("https://s2.ax1x.com/2019/07/10/ZcuErj.png"), auto !important;
