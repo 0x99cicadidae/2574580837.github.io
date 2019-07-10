@@ -1904,7 +1904,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #fff;
+  background: #9a011b;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3204,4 +3204,10 @@ body {
 }
 :active {
   cursor: url("https://s2.ax1x.com/2019/07/10/ZcudJK.png"), auto !important;
+}
+.header-inner {
+  opacity: 0.86;
+}
+.main-inner {
+  opacity: 0.86;
 }
