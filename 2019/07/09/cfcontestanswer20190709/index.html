@@ -126,9 +126,9 @@
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://s2.ax1x.com/2019/07/09/Z6lurQ.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/07/09/Z6JrvV.png">
-<meta property="og:image" content="https://img-blog.csdn.net/20170428234108337?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXE4MjYzMDkwNTc=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
-<meta property="og:image" content="https://img-blog.csdn.net/20170428235517234?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXE4MjYzMDkwNTc=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
-<meta property="og:updated_time" content="2019-07-09T15:43:48.418Z">
+<meta property="og:image" content="https://s2.ax1x.com/2019/07/10/Z62jv8.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/07/10/Z62Xgf.png">
+<meta property="og:updated_time" content="2019-07-10T00:20:30.383Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="20190708三人开黑CF模拟赛">
 <meta name="twitter:description" content="7月8号晚上8点和两位巨佬开了一场虚拟cf: [Helvetic Coding Contest 2018 online mirror (teams allowed, unrated)] 我这么蔡，只AC了A2、C1、C2、E1（被巨佬吊打）  我就说一下我写的几道题吧： A2. Death Stars (medium) The stardate is 1983, and Princess Heid">
@@ -461,7 +461,7 @@
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="MicroMaker">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="image" content="https://s2.ax1x.com/2019/07/09/ZyazLV.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
@@ -498,12 +498,24 @@
                 
               
 
-              <time title="创建时间：2019-07-09 22:05:57 / 修改时间：23:43:48" itemprop="dateCreated datePublished" datetime="2019-07-09T22:05:57+08:00">2019-07-09</time>
+              <time title="创建时间：2019-07-09 22:05:57" itemprop="dateCreated datePublished" datetime="2019-07-09T22:05:57+08:00">2019-07-09</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-07-10 08:20:30" itemprop="dateModified" datetime="2019-07-10T08:20:30+08:00">2019-07-10</time>
               
             
           </span>
@@ -626,7 +638,7 @@
 <p>转移方程很简单，</p>
 <p>$f[i][j]=max(f[i][j],f[k][j-1]+(g[i]-g[k])mod p)$ $(0&lt;=k&lt;i)$</p>
 <p>解释一下，g[i]是前缀和，$f[k][j-1]$表示在第k个数断j-1个点时的最大结果，$(g[i]-g[k])$就是k+1~i这段序列和，k是用来枚举用的，看不懂建议先去做一些基础的dp</p>
-<p>分析一下复杂度$O(n^2k)$，最大计算次数为$2.0×10^{10}$，20亿<del>，好，信心满满得相信CF的机子交上去</del></p>
+<p>分析一下复杂度$O(n^2k)$，最大计算次数为$2.0×10^{10}$，20亿<del>，好，信心满满地相信CF的机子交上去</del></p>
 <p>考虑优化，我们是不是可以把一个n搞成p来减少时间复杂度呢</p>
 <p>$f[i][j]$表示前i个数对p取模后为i，分成j段时的最大结果</p>
 <p><del>显而易见</del>，首先，因为dp数组的第一维的范围只有$[0,p-1]$，那么$f[i][j]$只有可能从$f[k][j-1]$$(0&lt;=k&lt;p)$转移过来，那么对应断点所得新的子序列的和就是$(g[i]-k)modp$，所以可以得到状态转移方程</p>
@@ -654,10 +666,10 @@
 <p>设矢量 $P = (x1, y1)，Q = ( x2, y2 )$，则矢量叉积定义为：$P×Q = x1×y2 - x2×y1$</p>
 <p>有$P×Q = - ( Q×P ) $和 $P×( - Q ) = - ( P×Q )$</p>
 <p>若 $P×Q &gt; 0$ , 则 $P$ 在 $Q$ 的顺时针方向。<br>若 $P×Q &lt; 0$ , 则 $P$ 在 $Q$ 的逆时针方向。<br>若 $P×Q = 0$ , 则 $P$ 与 $Q$ 共线，但可能同向也可能反向。</p>
-<p>(1):<img src="https://img-blog.csdn.net/20170428234108337?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXE4MjYzMDkwNTc=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt=""></p>
+<p>(1):<img src="https://s2.ax1x.com/2019/07/10/Z62jv8.png" alt=""></p>
 <p>如果两线段相交那么就意味着它们互相跨立，即如上图点 A 和 B 分别在线段 CD 两侧，点 C 和 D 分别在线 AB 两侧。<br>判断 A 点与 B 点是否在线段 DC 的两侧，即向量 A-D 与向量 B-D 分别在向量 C-D 的两端，也就是其叉积是异号的，即 。<br>同时也要证明 C 点与 D 点在线段 AB 的两端，两个同时满足，则表示线段相交。</p>
 <p>(2):临界情况，也就是上式恰好等于 0 的情况下：</p>
-<p><img src="https://img-blog.csdn.net/20170428235517234?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXE4MjYzMDkwNTc=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt=""></p>
+<p><img src="https://s2.ax1x.com/2019/07/10/Z62Xgf.png" alt=""></p>
 <p>当出现如上图所示的情况的时候，显然，这种情况是相交的。只要将等号直接补上即可。</p>
 <p>(3)再看看上面我给的图（3）：</p>
 <p>当出现如上所示的情况的时候，叉积都为 0, 可以通过跨立实验，但是两个线段并没有交点。不过还好，这种情况在第一步快速排斥已经被排除了。</p>
@@ -684,7 +696,7 @@
   <p><span>本文标题:</span><a href="/2019/07/09/cfcontestanswer20190709/">20190708三人开黑CF模拟赛</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 MicroMaker 的个人博客">MicroMaker</a></p>
   <p><span>发布时间:</span>2019年07月09日 - 22:07</p>
-  <p><span>最后更新:</span>2019年07月09日 - 23:07</p>
+  <p><span>最后更新:</span>2019年07月10日 - 08:07</p>
   <p><span>原始链接:</span><a href="/2019/07/09/cfcontestanswer20190709/" title="20190708三人开黑CF模拟赛">http://micromaker.github.io/2019/07/09/cfcontestanswer20190709/</a>
     <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://micromaker.github.io/2019/07/09/cfcontestanswer20190709/" aria-label="复制成功！"></i></span>
   </p>
@@ -794,7 +806,7 @@
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
-              <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="MicroMaker">
+              <img class="site-author-image" itemprop="image" src="https://s2.ax1x.com/2019/07/09/ZyazLV.jpg" alt="MicroMaker">
             
               <p class="site-author-name" itemprop="name">MicroMaker</p>
               <p class="site-description motion-element" itemprop="description"></p>
