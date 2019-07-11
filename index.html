@@ -434,6 +434,179 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://micromaker.github.io/2019/07/11/solution-poj1742/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="MicroMaker">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://s2.ax1x.com/2019/07/09/ZyazLV.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="MicroMaker's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/07/11/solution-poj1742/" class="post-title-link" itemprop="http://micromaker.github.io/index.html">solution-poj1742</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-07-11 19:52:12 / 修改时间：20:37:53" itemprop="dateCreated datePublished" datetime="2019-07-11T19:52:12+08:00">2019-07-11</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/07/11/solution-poj1742/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2019/07/11/solution-poj1742/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+		  
+		  
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><a href="https://vjudge.net/problem/POJ-1742" target="_blank" rel="noopener">POJ1742 - Coins</a></p>
+<p>People in Silverland use coins.They have coins of value A1,A2,A3…An Silverland dollar.One day Tony opened his money-box and found there were some coins.He decided to buy a very nice watch in a nearby shop. He wanted to pay the exact price(without change) and he known the price would not more than m.But he didn’t know the exact price of the watch.<br>You are to write a program which reads n,m,A1,A2,A3…An and C1,C2,C3…Cn corresponding to the number of Tony’s coins of value A1,A2,A3…An then calculate how many prices(form 1 to m) Tony can pay use these coins. </p>
+<p>Input</p>
+<p>The input contains several test cases. The first line of each test case contains two integers n(1&lt;=n&lt;=100),m(m&lt;=100000).The second line contains 2n integers, denoting A1,A2,A3…An,C1,C2,C3…Cn (1&lt;=Ai&lt;=100000,1&lt;=Ci&lt;=1000). The last test case is followed by two zeros.</p>
+<p>Output</p>
+<p>For each test case output the answer on a single line.</p>
+<p>Sample Input</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">3 10</span><br><span class="line">1 2 4 2 1 1</span><br><span class="line">2 5</span><br><span class="line">1 4 2 1</span><br><span class="line">0 0</span><br></pre></td></tr></table></figure>
+<p>Sample Output</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">8</span><br><span class="line">4</span><br></pre></td></tr></table></figure>
+<p>先给人话：给你n种硬币，面值为ai，每种有bi个，问你能凑成1~m中多少种面值，</p>
+<p>这题你看多重背包，直接二进制分组就好了，但是我太蔡了所以当时没想到 ，等一下再讲，</p>
+<p>先说说我的做法：</p>
+<p>首先，$f[i][j]$走起</p>
+<p>$f[i][j]$表示前i种硬币凑成j元时第i种硬币剩余的个数，然后列出方程</p>
+<p>首先用$f[i][j]=-1$表示前i种硬币无论如何都不能凑出j元</p>
+<p>$f[i][j] = C[i]$ $(f[i-1][j]!=-1)$ ，解释：在前i-1种硬币能凑出j元的时候，那还要第i种硬币干嘛？直接赋值成第i种硬币的数量</p>
+<p>$f[i][j] = f[i-1][j-A[i]]-1$</p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    <div>
+      
+    </div>
+
+    
+
+    
+       
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://micromaker.github.io/2019/07/11/state-compression-dp/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -2361,386 +2534,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://micromaker.github.io/2019/01/06/My-Genuine-Game-Life/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="MicroMaker">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://s2.ax1x.com/2019/07/09/ZyazLV.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="MicroMaker's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/01/06/My-Genuine-Game-Life/" class="post-title-link" itemprop="http://micromaker.github.io/index.html">购买的正版游戏</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2019-01-06 09:27:16" itemprop="dateCreated datePublished" datetime="2019-01-06T09:27:16+08:00">2019-01-06</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-06-17 19:56:10" itemprop="dateModified" datetime="2019-06-17T19:56:10+08:00">2019-06-17</time>
-              
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2019/01/06/My-Genuine-Game-Life/#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2019/01/06/My-Genuine-Game-Life/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-		  
-		  
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p><strong>评分均为购买的时候</strong></p>
-<ul>
-<li>iOS App Store</li>
-</ul>
-<div class="table-container">
-<table>
-<thead>
-<tr>
-<th style="text-align:left">名称</th>
-<th style="text-align:left">价格</th>
-<th style="text-align:left">入正时间</th>
-<th style="text-align:left">AppStore评分</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">Nyan Cat(内购)</td>
-<td style="text-align:left">6.00￥</td>
-<td style="text-align:left">2017.09.24</td>
-<td style="text-align:left">4.4</td>
-</tr>
-<tr>
-<td style="text-align:left">Grand Theft Auto : Vice City</td>
-<td style="text-align:left">30.00￥</td>
-<td style="text-align:left">2017.10.24</td>
-<td style="text-align:left">4.1</td>
-</tr>
-<tr>
-<td style="text-align:left">原谅帽大作战</td>
-<td style="text-align:left">1.00￥</td>
-<td style="text-align:left">2017.10.29</td>
-<td style="text-align:left">3.7</td>
-</tr>
-<tr>
-<td style="text-align:left">Grand Theft Auto : San Andreas</td>
-<td style="text-align:left">45.00￥</td>
-<td style="text-align:left">2018.01.24</td>
-<td style="text-align:left">4.4</td>
-</tr>
-<tr>
-<td style="text-align:left">MineCraft(国际版)</td>
-<td style="text-align:left">45.00￥(6.99$)</td>
-<td style="text-align:left">2018.04.11</td>
-<td style="text-align:left">4.3</td>
-</tr>
-<tr>
-<td style="text-align:left">True Skate</td>
-<td style="text-align:left">12.00￥</td>
-<td style="text-align:left">2018.05.15</td>
-<td style="text-align:left">3.8</td>
-</tr>
-<tr>
-<td style="text-align:left">True Skate , SLS 2017: Super Crown(内购)</td>
-<td style="text-align:left">6.00￥</td>
-<td style="text-align:left">2018.05.15</td>
-<td style="text-align:left">-</td>
-</tr>
-<tr>
-<td style="text-align:left">True Skate , 2017 Skatepark</td>
-<td style="text-align:left">12.00￥</td>
-<td style="text-align:left">2018.05.15</td>
-<td style="text-align:left">-</td>
-</tr>
-<tr>
-<td style="text-align:left">Plague Inc.</td>
-<td style="text-align:left">3.00￥</td>
-<td style="text-align:left">2018.06.11</td>
-<td style="text-align:left">4.9</td>
-</tr>
-<tr>
-<td style="text-align:left">Plague Inc: Scenario Creator</td>
-<td style="text-align:left">18.00￥</td>
-<td style="text-align:left">2018.06.11</td>
-<td style="text-align:left">4.4</td>
-</tr>
-<tr>
-<td style="text-align:left">Doodle Jump</td>
-<td style="text-align:left">1.00￥</td>
-<td style="text-align:left">2018.10.19</td>
-<td style="text-align:left">4.5</td>
-</tr>
-<tr>
-<td style="text-align:left">ICEY</td>
-<td style="text-align:left">12.00￥(1.99$)</td>
-<td style="text-align:left">2018.12.24</td>
-<td style="text-align:left">4.7</td>
-</tr>
-<tr>
-<td style="text-align:left">Cytus2</td>
-<td style="text-align:left">12.00￥(1.99$)</td>
-<td style="text-align:left">2019.01.06</td>
-<td style="text-align:left">4.7</td>
-</tr>
-<tr>
-<td style="text-align:left">魔女之泉3</td>
-<td style="text-align:left">25.00￥</td>
-<td style="text-align:left">2019.03.11</td>
-<td style="text-align:left">4.8</td>
-</tr>
-<tr>
-<td style="text-align:left">G30</td>
-<td style="text-align:left">12.00￥</td>
-<td style="text-align:left">2019.04.21</td>
-<td style="text-align:left">4.9</td>
-</tr>
-<tr>
-<td style="text-align:left">Cytus</td>
-<td style="text-align:left">12.00￥</td>
-<td style="text-align:left">2019.06.08</td>
-<td style="text-align:left">4.9</td>
-</tr>
-<tr>
-<td style="text-align:left">Cytus2 . Emotion Samples 01</td>
-<td style="text-align:left">30.00￥(4.99$)</td>
-<td style="text-align:left">2019.06.17</td>
-<td style="text-align:left">-</td>
-</tr>
-<tr>
-<td style="text-align:left">Deemo</td>
-<td style="text-align:left">6.00￥(0.99$)</td>
-<td style="text-align:left">2019.06.17</td>
-<td style="text-align:left">4.9</td>
-</tr>
-<tr>
-<td style="text-align:left">Muse Dash</td>
-<td style="text-align:left">6.00￥(0.99$)</td>
-<td style="text-align:left">2019.06.17</td>
-<td style="text-align:left">4.9</td>
-</tr>
-</tbody>
-</table>
-</div>
-<ul>
-<li>Steam</li>
-</ul>
-<div class="table-container">
-<table>
-<thead>
-<tr>
-<th style="text-align:left">名称</th>
-<th style="text-align:left">价格(优惠)(原价)</th>
-<th style="text-align:left">入正时间</th>
-<th style="text-align:left">Steam评分(好评占比)</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">Don’t Starve Together 双人</td>
-<td style="text-align:left">29￥(-40%)(48￥)</td>
-<td style="text-align:left">2017.12.23</td>
-<td style="text-align:left">96%</td>
-</tr>
-<tr>
-<td style="text-align:left">The Space Garden</td>
-<td style="text-align:left">4￥(-60%)(11￥)</td>
-<td style="text-align:left">2017.12.23</td>
-<td style="text-align:left">28%</td>
-</tr>
-<tr>
-<td style="text-align:left">Grand Theft Auto V</td>
-<td style="text-align:left">75￥(-60%)(189￥)</td>
-<td style="text-align:left">2017.12.24</td>
-<td style="text-align:left">69%</td>
-</tr>
-<tr>
-<td style="text-align:left">Plague Inc: Evolved</td>
-<td style="text-align:left">19￥(-60%)(48￥)</td>
-<td style="text-align:left">2018.11.24</td>
-<td style="text-align:left">93%</td>
-</tr>
-<tr>
-<td style="text-align:left">ICEY</td>
-<td style="text-align:left">38￥</td>
-<td style="text-align:left">2019.01.05</td>
-<td style="text-align:left">91%</td>
-</tr>
-<tr>
-<td style="text-align:left">中国式家长</td>
-<td style="text-align:left">36￥</td>
-<td style="text-align:left">2019.02.12</td>
-<td style="text-align:left">89%</td>
-</tr>
-<tr>
-<td style="text-align:left">Slay.one</td>
-<td style="text-align:left">37￥</td>
-<td style="text-align:left">2019.02.12</td>
-<td style="text-align:left">75%</td>
-</tr>
-</tbody>
-</table>
-</div>
-<ul>
-<li>PC官网平台</li>
-</ul>
-<div class="table-container">
-<table>
-<thead>
-<tr>
-<th style="text-align:left">名称</th>
-<th style="text-align:left">价格</th>
-<th style="text-align:left">入正时间</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">Minecraft: Java Edition</td>
-<td style="text-align:left">180￥</td>
-<td style="text-align:left">2015.03.28</td>
-<td style="text-align:left"></td>
-</tr>
-</tbody>
-</table>
-</div>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    <div>
-      
-    </div>
-
-    
-
-    
-       
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2788,7 +2581,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">23</span>
+                    <span class="site-state-item-count">24</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -2990,7 +2783,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共13.3k字</span>
+  <span class="post-count">博客全站共13.7k字</span>
 <span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span> <script>
     var now = new Date(); 
     function createtime() { 
