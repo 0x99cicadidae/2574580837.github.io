@@ -130,7 +130,7 @@
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://s2.ax1x.com/2019/07/10/Zgaq3Q.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/07/10/Zgab9g.png">
-<meta property="og:updated_time" content="2019-07-10T15:08:40.982Z">
+<meta property="og:updated_time" content="2019-07-11T02:24:52.877Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="20190710双人开黑CF模拟赛">
 <meta name="twitter:description" content="Codeforces Round #571 (Div. 2)   日常被tanao_大佬带飞，我AC了A和C（B题没了。。。否则tanao_大佬肯定把我吊打） A. Vus the Cossack and a Contest Vus the Cossack holds a programming competition, in which $n$ people participate. He de">
@@ -500,12 +500,24 @@
                 
               
 
-              <time title="创建时间：2019-07-10 22:33:57 / 修改时间：23:08:40" itemprop="dateCreated datePublished" datetime="2019-07-10T22:33:57+08:00">2019-07-10</time>
+              <time title="创建时间：2019-07-10 22:33:57" itemprop="dateCreated datePublished" datetime="2019-07-10T22:33:57+08:00">2019-07-10</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-07-11 10:24:52" itemprop="dateModified" datetime="2019-07-11T10:24:52+08:00">2019-07-11</time>
               
             
           </span>
@@ -608,8 +620,8 @@
 <p>给你两个个二进制串a和b，b的长度小于等于a，将a的每个长度位b长度的连续子序列拿出来和a进行f操作，f操作就是比对两个串有几位不同，如果这个数是偶数，那么答案加一</p>
 <p>样例1的解释在题面里有了</p>
 <p>那么直接开始分析吧：</p>
-<p>这个f操作以看就知道是异或然后统计1的个数，但是直接做或者bitset都会超时，那么</p>
-<p>这题看到偶数就应该想到奇偶性，那么奇偶性与和以及异或和是有关的，于是。。。</p>
+<p>这个f操作一看就知道是异或然后统计1的个数，但是直接做或者bitset都会超时，那么</p>
+<p>这题看到偶数就应该想到奇偶性，那么奇偶性与 和以及异或和 是有关的，于是。。。</p>
 <p>把a串的前缀和求出来，再把b串的异或和求出来</p>
 <p>然后看看，我们只要得知f结果的奇偶性就好了，并不要得知他是多少</p>
 <p>所以，a的前缀和可以帮我们知道a的一段区间内和的奇偶性，我们也可以得知这段区间内1的出现次数的奇偶性</p>
@@ -647,7 +659,7 @@
   <p><span>本文标题:</span><a href="/2019/07/10/cfcontestanswer20190710/">20190710双人开黑CF模拟赛</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 MicroMaker 的个人博客">MicroMaker</a></p>
   <p><span>发布时间:</span>2019年07月10日 - 22:07</p>
-  <p><span>最后更新:</span>2019年07月10日 - 23:07</p>
+  <p><span>最后更新:</span>2019年07月11日 - 10:07</p>
   <p><span>原始链接:</span><a href="/2019/07/10/cfcontestanswer20190710/" title="20190710双人开黑CF模拟赛">http://micromaker.github.io/2019/07/10/cfcontestanswer20190710/</a>
     <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://micromaker.github.io/2019/07/10/cfcontestanswer20190710/" aria-label="复制成功！"></i></span>
   </p>
@@ -706,6 +718,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/07/11/solution-cf118d/" rel="prev" title="solution-cf118d_Caesar's Legions">
+                solution-cf118d_Caesar's Legions <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -770,7 +786,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">21</span>
+                    <span class="site-state-item-count">22</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -972,7 +988,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共12k字</span>
+  <span class="post-count">博客全站共12.7k字</span>
 <span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span> <script>
     var now = new Date(); 
     function createtime() { 
