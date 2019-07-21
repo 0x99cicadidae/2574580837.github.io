@@ -434,6 +434,255 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://micromaker.github.io/2019/07/11/solution-poj1742/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="MicroMaker">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://s2.ax1x.com/2019/07/09/ZyazLV.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="MicroMaker's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/07/11/solution-poj1742/" class="post-title-link" itemprop="http://micromaker.github.io/page/2/index.html"><背包>solution-poj1742_Coins</背包></a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-07-11 19:52:12" itemprop="dateCreated datePublished" datetime="2019-07-11T19:52:12+08:00">2019-07-11</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-07-12 14:46:14" itemprop="dateModified" datetime="2019-07-12T14:46:14+08:00">2019-07-12</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/07/11/solution-poj1742/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2019/07/11/solution-poj1742/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+		  
+		  
+
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">本文字数：</span>
+                
+                <span title="本文字数">14k</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">7 分钟</span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><a href="https://vjudge.net/problem/POJ-1742" target="_blank" rel="noopener">POJ1742 - Coins</a></p>
+<p>People in Silverland use coins.They have coins of value A1,A2,A3…An Silverland dollar.One day Tony opened his money-box and found there were some coins.He decided to buy a very nice watch in a nearby shop. He wanted to pay the exact price(without change) and he known the price would not more than m.But he didn’t know the exact price of the watch.<br>You are to write a program which reads n,m,A1,A2,A3…An and C1,C2,C3…Cn corresponding to the number of Tony’s coins of value A1,A2,A3…An then calculate how many prices(form 1 to m) Tony can pay use these coins. </p>
+<p>Input</p>
+<p>The input contains several test cases. The first line of each test case contains two integers n(1&lt;=n&lt;=100),m(m&lt;=100000).The second line contains 2n integers, denoting A1,A2,A3…An,C1,C2,C3…Cn (1&lt;=Ai&lt;=100000,1&lt;=Ci&lt;=1000). The last test case is followed by two zeros.</p>
+<p>Output</p>
+<p>For each test case output the answer on a single line.</p>
+<p>Sample Input</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">3 10</span><br><span class="line">1 2 4 2 1 1</span><br><span class="line">2 5</span><br><span class="line">1 4 2 1</span><br><span class="line">0 0</span><br></pre></td></tr></table></figure>
+<p>Sample Output</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">8</span><br><span class="line">4</span><br></pre></td></tr></table></figure>
+<p>先给人话：给你n种硬币，面值为ai，每种有bi个，问你能凑成1~m中多少种面值，</p>
+<p>这题你看多重背包，直接二进制分组就好了，但是我太蔡了所以当时没想到 ，等一下再讲，</p>
+<p>先说说我的做法：</p>
+<p>首先，$f[i][j]$走起</p>
+<p>$f[i][j]$表示前i种硬币凑成j元时第i种硬币剩余的个数，然后列出方程</p>
+<p>首先用$f[i][j]=-1$表示前i种硬币无论如何都不能凑出j元</p>
+<p>$f[i][j] = B[i]$ $(f[i-1][j]!=-1)$ ，解释：在前i-1种硬币能凑出j元的时候，那还要第i种硬币干嘛？直接赋值成第i种硬币的数量</p>
+<p>$f[i][j] = f[i-1][j-A[i]]-1$ $(j&gt;=A[i])$，解释：</p>
+<p>转移之前的状态时前i-1个硬币组成了j-A[i]元所花的第i-1个硬币的方案数，</p>
+<p>转移时，花了第i种硬币1个以凑成j元，为什么要-1呢？因为不是花了1个硬币么///</p>
+<p>其他情况，$f[i][j] = -1$</p>
+<p>好，于是上代码（部分）</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;++i)</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;=m;++j)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">if</span>(f[i<span class="number">-1</span>][j]&gt;=<span class="number">0</span>)</span><br><span class="line">				f[i][j]=B[i];</span><br><span class="line">			<span class="keyword">else</span> <span class="keyword">if</span>(j&lt;A[i]||(j&gt;=A[i]&amp;&amp;f[i<span class="number">-1</span>][j-A[i]]&lt;=<span class="number">0</span>))</span><br><span class="line">				f[i][j]=<span class="number">-1</span>;</span><br><span class="line">			<span class="keyword">else</span> <span class="keyword">if</span>(j&gt;=A[i])</span><br><span class="line">				f[i][j]=f[i<span class="number">-1</span>][j-A[i]]<span class="number">-1</span>;</span><br><span class="line">		&#125;</span><br></pre></td></tr></table></figure>
+<p>这里的边界条件可能有点问题，各位大佬见谅啊<del>（反正这不是正解）</del></p>
+<p><del>好，Submit</del></p>
+<p><strong>Memory Limit Exceeded</strong>，标准结局</p>
+<p>考虑优化，</p>
+<p>咦，你看<del>这个f又大又圆</del>这个$f[i][j]$会从$f[i-1][…]$转移过来，还记得背包里面我们怎么把二维转成一维么，直接滚掉就可以了，于是，状态转移方程：</p>
+<p>$f[j] = B[i] $ $(f[j] != -1)$</p>
+<p>$f[j]=f[j-A[i]]-1$ $(j&gt;=A[i])$</p>
+<p>其他情况，$f[j] = -1$</p>
+<p>注意，$f[0]=0$</p>
+<p>然后计算一下时间复杂度，</p>
+<p>$O(nm)$，最坏的时候1.5亿，</p>
+<p>再看看源题库，poj，<del>笑容逐渐消失</del></p>
+<p>但是时限给了3秒啊！刚好能卡过去！！！</p>
+<p>好，上Code：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cctype&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;queue&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> reg register</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MaxN=<span class="number">101</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MaxM=<span class="number">100001</span>;</span><br><span class="line"><span class="keyword">template</span> &lt;<span class="class"><span class="keyword">class</span> <span class="title">t</span>&gt; <span class="title">inline</span> <span class="title">void</span> <span class="title">rd</span>(<span class="title">t</span> &amp;<span class="title">s</span>)</span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">	s=<span class="number">0</span>;</span><br><span class="line">	reg <span class="keyword">char</span> c=getchar();</span><br><span class="line">	<span class="keyword">while</span>(!<span class="built_in">isdigit</span>(c))</span><br><span class="line">		c=getchar();</span><br><span class="line">	<span class="keyword">while</span>(<span class="built_in">isdigit</span>(c))</span><br><span class="line">		s=(s&lt;&lt;<span class="number">3</span>)+(s&lt;&lt;<span class="number">1</span>)+(c^<span class="number">48</span>),c=getchar();</span><br><span class="line">	<span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">int</span> f[MaxM];</span><br><span class="line"><span class="keyword">int</span> w[MaxN],st[MaxN];</span><br><span class="line"><span class="keyword">int</span> n,m;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">work</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	reg <span class="keyword">int</span> ans=<span class="number">0</span>;</span><br><span class="line">	<span class="built_in">memset</span>(f,<span class="number">-1</span>,<span class="keyword">sizeof</span> f);f[<span class="number">0</span>]=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;++i)</span><br><span class="line">		rd(w[i]);</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;++i)</span><br><span class="line">		rd(st[i]); </span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;++i)</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;=m;++j)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">if</span>(f[j]&gt;=<span class="number">0</span>)</span><br><span class="line">				f[j]=st[i];</span><br><span class="line">			<span class="keyword">else</span> <span class="keyword">if</span>(j&gt;=w[i])</span><br><span class="line">				f[j]=f[j-w[i]]<span class="number">-1</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=m;++i)</span><br><span class="line">		<span class="keyword">if</span>(f[i]&gt;=<span class="number">0</span>)</span><br><span class="line">			++ans;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%d\n"</span>,ans);</span><br><span class="line">	<span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">signed</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">while</span>(<span class="built_in">cin</span>&gt;&gt;n&gt;&gt;m&amp;&amp;n&amp;&amp;m)</span><br><span class="line">		work();</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>结束了？</p>
+<p><del>结束了。</del>还没完呢</p>
+<p>这里提一下二进制分组的做法，</p>
+<p>首先，我们要知道二进制分组是什么，</p>
+<p>假设有物品的数量为9，分成9组数量为1的物品这样复杂度肯定不优秀，怎么办呢？二进制分组</p>
+<p>把数量按照二进制分组：1、2、4，最后还剩下一个2，</p>
+<p>这样分组既可以想分成9组一样组合枚举出所有的情况，又使复杂度降成了log，这十分的香</p>
+<p><del>“可我没听懂你在说什么”</del></p>
+<p>假设这9个物品每个物品体积为3，价值为4，那么经过二进制分组后的物品体积和价值应为：</p>
+<p>体积： 3， 6，12， 6</p>
+<p>价值： 4， 8，16， 8</p>
+<p><del>“那怎么实现呢”</del></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;++i)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">register</span> <span class="keyword">int</span> k=<span class="number">1</span>;</span><br><span class="line">    read(N);read(w);read(c);</span><br><span class="line">    <span class="keyword">while</span>(k&lt;=N)</span><br><span class="line">    &#123;</span><br><span class="line">        ++n;</span><br><span class="line">        W[n]=w*k;</span><br><span class="line">        C[n]=c*k;</span><br><span class="line">        k&lt;&lt;=<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(N)</span><br><span class="line">    &#123;</span><br><span class="line">        ++n;</span><br><span class="line">        W[n]=w*N;</span><br><span class="line">        C[n]=c*N;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>大概就是这个样子</p>
+<p>具体的代码各位大佬自己上网搜</p>
+<p>因为我实在是太蔡了awa</p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    <div>
+      
+    </div>
+
+    
+
+    
+       
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://micromaker.github.io/2019/07/11/state-compression-dp/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -2637,420 +2886,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://micromaker.github.io/2019/01/06/My-Genuine-Game-Life/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="MicroMaker">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://s2.ax1x.com/2019/07/09/ZyazLV.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="MicroMaker's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/01/06/My-Genuine-Game-Life/" class="post-title-link" itemprop="http://micromaker.github.io/page/2/index.html">购买的正版游戏</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2019-01-06 09:27:16" itemprop="dateCreated datePublished" datetime="2019-01-06T09:27:16+08:00">2019-01-06</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-07-16 21:48:12" itemprop="dateModified" datetime="2019-07-16T21:48:12+08:00">2019-07-16</time>
-              
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2019/01/06/My-Genuine-Game-Life/#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2019/01/06/My-Genuine-Game-Life/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-		  
-		  
-
-          
-
-          
-            <div class="post-symbolscount">
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">本文字数：</span>
-                
-                <span title="本文字数">6.1k</span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">3 分钟</span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p><strong>评分均为购买的时候</strong></p>
-<ul>
-<li>iOS App Store</li>
-</ul>
-<div class="table-container">
-<table>
-<thead>
-<tr>
-<th style="text-align:left">名称</th>
-<th style="text-align:left">价格</th>
-<th style="text-align:left">入正时间</th>
-<th style="text-align:left">AppStore评分</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">Nyan Cat(内购)</td>
-<td style="text-align:left">6.00￥</td>
-<td style="text-align:left">2017.09.24</td>
-<td style="text-align:left">4.4</td>
-</tr>
-<tr>
-<td style="text-align:left">Grand Theft Auto : Vice City</td>
-<td style="text-align:left">30.00￥</td>
-<td style="text-align:left">2017.10.24</td>
-<td style="text-align:left">4.1</td>
-</tr>
-<tr>
-<td style="text-align:left">原谅帽大作战</td>
-<td style="text-align:left">1.00￥</td>
-<td style="text-align:left">2017.10.29</td>
-<td style="text-align:left">3.7</td>
-</tr>
-<tr>
-<td style="text-align:left">Grand Theft Auto : San Andreas</td>
-<td style="text-align:left">45.00￥</td>
-<td style="text-align:left">2018.01.24</td>
-<td style="text-align:left">4.4</td>
-</tr>
-<tr>
-<td style="text-align:left">MineCraft(国际版)</td>
-<td style="text-align:left">45.00￥(6.99$)</td>
-<td style="text-align:left">2018.04.11</td>
-<td style="text-align:left">4.3</td>
-</tr>
-<tr>
-<td style="text-align:left">True Skate</td>
-<td style="text-align:left">12.00￥</td>
-<td style="text-align:left">2018.05.15</td>
-<td style="text-align:left">3.8</td>
-</tr>
-<tr>
-<td style="text-align:left">True Skate , SLS 2017: Super Crown(内购)</td>
-<td style="text-align:left">6.00￥</td>
-<td style="text-align:left">2018.05.15</td>
-<td style="text-align:left">-</td>
-</tr>
-<tr>
-<td style="text-align:left">True Skate , 2017 Skatepark</td>
-<td style="text-align:left">12.00￥</td>
-<td style="text-align:left">2018.05.15</td>
-<td style="text-align:left">-</td>
-</tr>
-<tr>
-<td style="text-align:left">Plague Inc.</td>
-<td style="text-align:left">3.00￥</td>
-<td style="text-align:left">2018.06.11</td>
-<td style="text-align:left">4.9</td>
-</tr>
-<tr>
-<td style="text-align:left">Plague Inc: Scenario Creator</td>
-<td style="text-align:left">18.00￥</td>
-<td style="text-align:left">2018.06.11</td>
-<td style="text-align:left">4.4</td>
-</tr>
-<tr>
-<td style="text-align:left">Doodle Jump</td>
-<td style="text-align:left">1.00￥</td>
-<td style="text-align:left">2018.10.19</td>
-<td style="text-align:left">4.5</td>
-</tr>
-<tr>
-<td style="text-align:left">ICEY</td>
-<td style="text-align:left">12.00￥(1.99$)</td>
-<td style="text-align:left">2018.12.24</td>
-<td style="text-align:left">4.7</td>
-</tr>
-<tr>
-<td style="text-align:left">Cytus2</td>
-<td style="text-align:left">12.00￥(1.99$)</td>
-<td style="text-align:left">2019.01.06</td>
-<td style="text-align:left">4.7</td>
-</tr>
-<tr>
-<td style="text-align:left">魔女之泉3</td>
-<td style="text-align:left">25.00￥</td>
-<td style="text-align:left">2019.03.11</td>
-<td style="text-align:left">4.8</td>
-</tr>
-<tr>
-<td style="text-align:left">G30</td>
-<td style="text-align:left">12.00￥</td>
-<td style="text-align:left">2019.04.21</td>
-<td style="text-align:left">4.9</td>
-</tr>
-<tr>
-<td style="text-align:left">Cytus</td>
-<td style="text-align:left">12.00￥</td>
-<td style="text-align:left">2019.06.08</td>
-<td style="text-align:left">4.9</td>
-</tr>
-<tr>
-<td style="text-align:left">Cytus2 . Emotion Samples 01</td>
-<td style="text-align:left">30.00￥(4.99$)</td>
-<td style="text-align:left">2019.06.17</td>
-<td style="text-align:left">-</td>
-</tr>
-<tr>
-<td style="text-align:left">Deemo</td>
-<td style="text-align:left">6.00￥(0.99$)</td>
-<td style="text-align:left">2019.06.17</td>
-<td style="text-align:left">4.9</td>
-</tr>
-<tr>
-<td style="text-align:left">Muse Dash</td>
-<td style="text-align:left">6.00￥(0.99$)</td>
-<td style="text-align:left">2019.06.17</td>
-<td style="text-align:left">4.9</td>
-</tr>
-</tbody>
-</table>
-</div>
-<ul>
-<li>Steam</li>
-</ul>
-<div class="table-container">
-<table>
-<thead>
-<tr>
-<th style="text-align:left">名称</th>
-<th style="text-align:left">价格(优惠)(原价)</th>
-<th style="text-align:left">入正时间</th>
-<th style="text-align:left">Steam评分(好评占比)</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">Don’t Starve Together 双人</td>
-<td style="text-align:left">29￥(-40%)(48￥)</td>
-<td style="text-align:left">2017.12.23</td>
-<td style="text-align:left">96%</td>
-</tr>
-<tr>
-<td style="text-align:left">The Space Garden</td>
-<td style="text-align:left">4￥(-60%)(11￥)</td>
-<td style="text-align:left">2017.12.23</td>
-<td style="text-align:left">28%</td>
-</tr>
-<tr>
-<td style="text-align:left">Grand Theft Auto V</td>
-<td style="text-align:left">75￥(-60%)(189￥)</td>
-<td style="text-align:left">2017.12.24</td>
-<td style="text-align:left">69%</td>
-</tr>
-<tr>
-<td style="text-align:left">Plague Inc: Evolved</td>
-<td style="text-align:left">19￥(-60%)(48￥)</td>
-<td style="text-align:left">2018.11.24</td>
-<td style="text-align:left">93%</td>
-</tr>
-<tr>
-<td style="text-align:left">ICEY</td>
-<td style="text-align:left">38￥</td>
-<td style="text-align:left">2019.01.05</td>
-<td style="text-align:left">91%</td>
-</tr>
-<tr>
-<td style="text-align:left">中国式家长</td>
-<td style="text-align:left">36￥</td>
-<td style="text-align:left">2019.02.12</td>
-<td style="text-align:left">89%</td>
-</tr>
-<tr>
-<td style="text-align:left">Slay.one</td>
-<td style="text-align:left">37￥</td>
-<td style="text-align:left">2019.02.12</td>
-<td style="text-align:left">75%</td>
-</tr>
-<tr>
-<td style="text-align:left">Muse Dash</td>
-<td style="text-align:left">18￥</td>
-<td style="text-align:left">2019.07.16</td>
-<td style="text-align:left">98%</td>
-</tr>
-</tbody>
-</table>
-</div>
-<ul>
-<li>PC官网平台</li>
-</ul>
-<div class="table-container">
-<table>
-<thead>
-<tr>
-<th style="text-align:left">名称</th>
-<th style="text-align:left">价格</th>
-<th style="text-align:left">入正时间</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">Minecraft: Java Edition</td>
-<td style="text-align:left">180￥</td>
-<td style="text-align:left">2015.03.28</td>
-<td style="text-align:left"></td>
-</tr>
-</tbody>
-</table>
-</div>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    <div>
-      
-    </div>
-
-    
-
-    
-       
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -3098,7 +2933,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">33</span>
+                    <span class="site-state-item-count">34</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -3283,7 +3118,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="站点总字数">67k</span>
+    <span title="站点总字数">68k</span>
   
 
   
@@ -3292,7 +3127,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">33 分钟</span>
+    <span title="站点阅读时长">34 分钟</span>
   
 </div>
 
@@ -3312,7 +3147,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共21.8k字</span>
+  <span class="post-count">博客全站共22.4k字</span>
 <span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span> <script>
     var now = new Date(); 
     function createtime() { 
